@@ -3,9 +3,13 @@ import iconSun from "../../assets/images/icon-sun.svg";
 import logoDark from "../../assets/images/logo-dark-theme.svg";
 import logoLight from "../../assets/images/logo-light-theme.svg";
 
-export default function Header({ toggleTheme }) {
-  const clickHandler = (e) => {
-    toggleTheme(e);
+type PropTypes = {
+  toggleTheme: (theme: string) => void;
+};
+
+export default function Header({ toggleTheme }: PropTypes) {
+  const clickHandler = (theme: string) => {
+    toggleTheme(theme);
   };
 
   return (
@@ -15,14 +19,14 @@ export default function Header({ toggleTheme }) {
       <img
         onClick={() => clickHandler("light")}
         src={iconSun}
-        alt='logo'
-        className='dark:block hidden w-[1.25rem] h-[1.25rem]'
+        alt='sun icon'
+        className='hidden dark:block w-[1.25rem] h-[1.25rem]'
       />
       <img
         onClick={() => clickHandler("dark")}
         src={iconMoon}
-        alt='logo'
-        className='dark:hidden block w-[1.25rem] h-[1.25rem]'
+        alt='moon icon'
+        className='block dark:hidden w-[1.25rem] h-[1.25rem]'
       />
     </div>
   );
