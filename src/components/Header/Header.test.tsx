@@ -4,15 +4,16 @@ import { vi } from "vitest";
 import Header from "./Header";
 
 describe("Theme changer", () => {
-  render(
-    <Header
-      toggleTheme={vi.fn((e) => {
-        console.log(e);
-      })}
-    />
-  );
-  const moon = screen.getByAltText("sun icon");
-  //   fireEvent.click(moon);
-  it("Changes theme to dark when clicked", () => {});
-  expect(moon).toBeInTheDocument();
+  const themeFn = vi.fn((theme) => theme);
+
+  render(<Header toggleTheme={themeFn} />);
+  it("Detects theme change", () => {
+    const moon = screen.getByAltText("moon icon");
+    fireEvent.click(moon);
+    expect(themeFn).toHaveReturnedWith("dark");
+
+    const sun = screen.getByAltText("sun icon");
+    fireEvent.click(sun);
+    expect(themeFn).toHaveReturnedWith("light");
+  });
 });
