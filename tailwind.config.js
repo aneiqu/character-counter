@@ -24,7 +24,7 @@ export default {
           800: "#21222C",
           900: "#12131A",
         },
-        blue: {
+        purple: {
           400: "#D3A0FA",
           500: "#C27CF8",
         },

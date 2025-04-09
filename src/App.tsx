@@ -6,23 +6,27 @@ import Header from "./components/Header/Header";
 import MainContainer from "./components/MainContainer/MainContainer";
 import Stats from "./components/Stats/Stats";
 
-type Options = {
-  excludeSpaces: boolean;
-  setCharLimit: boolean;
-  charLimit: number;
+type OptionTypes = {
+  exSpaces: boolean;
+  charLimit: boolean;
+  charLimitNumber: number;
 };
 
 function App() {
   const [text, setText] = useState<string>("");
   const [theme, setTheme] = useState<string>("");
-  const [options, setOptions] = useState<Options>({
-    excludeSpaces: false,
-    setCharLimit: false,
-    charLimit: 0,
+  const [options, setOptions] = useState<OptionTypes>({
+    exSpaces: false,
+    charLimit: false,
+    charLimitNumber: 0,
   });
 
   const toggleTheme = (theme: string) => {
     setTheme(theme);
+  };
+
+  const updateOptions = (options: OptionTypes) => {
+    setOptions((prev) => ({ ...prev, ...options }));
   };
 
   return (
@@ -32,8 +36,8 @@ function App() {
       style={{ backgroundImage: `url(${theme === "dark" ? BgDark : BgLight})` }}
     >
       <Header toggleTheme={toggleTheme} />
-      <MainContainer setText={setText} />
-      <Stats text={text} />
+      <MainContainer setText={setText} text={text} options={options} setOptions={updateOptions} />
+      <Stats text={text} exSpaces={options.exSpaces} />
     </div>
   );
 }

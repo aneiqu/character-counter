@@ -6,13 +6,14 @@ import StatisticCard from "./StatisticCard";
 
 type PropTypes = {
   text: string;
+  exSpaces: boolean;
 };
 
-export default function Stats({ text }: PropTypes) {
+export default function Stats({ text, exSpaces }: PropTypes) {
   return (
     <div className='flex flex-col gap-4 col-span-4 p-4'>
       <StatisticCard
-        StatValue={text.length}
+        StatValue={exSpaces ? text.replace(/\s+/g, "").length : text.length}
         StatTitle='Total Characters'
         Image={patternCharCount}
         Style='bg-purple-400'
