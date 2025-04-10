@@ -1,7 +1,6 @@
 import patternCharCount from "../../assets/images/pattern-character-count.svg";
 import patternSentenceCount from "../../assets/images/pattern-sentence-count.svg";
 import patternWordCount from "../../assets/images/pattern-word-count.svg";
-import DensityContainer from "../Density/DensityContainer";
 import StatisticCard from "./StatisticCard";
 
 type PropTypes = {
@@ -11,7 +10,7 @@ type PropTypes = {
 
 export default function Stats({ text, exSpaces }: PropTypes) {
   return (
-    <div className='flex flex-col gap-4 col-span-4 p-4'>
+    <div className='flex flex-col md:flex-row gap-4 col-span-4 md:col-span-8 px-4 md:px-8'>
       <StatisticCard
         StatValue={exSpaces ? text.replace(/\s+/g, "").length : text.length}
         StatTitle='Total Characters'
@@ -40,7 +39,6 @@ export default function Stats({ text, exSpaces }: PropTypes) {
         Image={patternSentenceCount}
         Style='bg-orange-500'
       />
-      <DensityContainer text={text} />
     </div>
   );
 }

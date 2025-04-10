@@ -39,12 +39,12 @@ export default function DensityContainer({ text }: PropTypes) {
     ));
 
   return (
-    <div className='flex flex-col gap-5 dark:text-neutral-200'>
+    <div className='flex flex-col gap-5 col-span-4 md:col-span-8 px-4 md:px-8 dark:text-neutral-200'>
       <h3 className='text-preset-2'>Letter Density</h3>
       <div className='flex flex-col gap-3'>
         {LetterStats.slice(0, showAllStats ? LetterStats.length : 5)}
       </div>
-      <div className='flex items-center gap-2' onClick={toggleDisplay}>
+      <div className='flex items-center gap-2 mb-20' onClick={toggleDisplay}>
         {showAllStats ? "See less" : "See more"}
         <svg
           xmlns='http://www.w3.org/2000/svg'

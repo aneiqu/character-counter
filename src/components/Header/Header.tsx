@@ -13,7 +13,7 @@ export default function Header({ toggleTheme }: PropTypes) {
   };
 
   return (
-    <div className='col-span-4 flex justify-between p-4 items-center '>
+    <div className='col-span-4 md:col-span-8 flex justify-between p-4 md:p-8 items-center '>
       <img src={logoDark} alt='logo' className='dark:block hidden w-[11.525rem] h-[1.875rem]' />
       <img src={logoLight} alt='logo' className='dark:hidden block w-[11.525rem] h-[1.875rem]' />
       <button className='hidden dark:block' onClick={() => clickHandler("light")}>

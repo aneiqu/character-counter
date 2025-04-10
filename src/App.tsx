@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import BgDark from "./assets/images/bg-dark-theme.png";
 import BgLight from "./assets/images/bg-light-theme.png";
+import DensityContainer from "./components/Density/DensityContainer";
 import Header from "./components/Header/Header";
 import MainContainer from "./components/MainContainer/MainContainer";
 import Stats from "./components/Stats/Stats";
@@ -38,6 +39,7 @@ function App() {
       <Header toggleTheme={toggleTheme} />
       <MainContainer setText={setText} text={text} options={options} setOptions={updateOptions} />
       <Stats text={text} exSpaces={options.exSpaces} />
+      <DensityContainer text={text} />
     </div>
   );
 }
