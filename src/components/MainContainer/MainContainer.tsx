@@ -22,18 +22,16 @@ export default function MainContainer({ text, setText, options, setOptions }: Pr
     setOptions({ ...options, ...option });
   };
 
-  // const readingTime = ;
-
   return (
-    <div className='flex flex-col gap-10 col-span-4 md:col-span-8 px-4 md:px-8 '>
-      <h1 className='text-preset-1-mobile font-bold text-neutral-900 text-center dark:text-neutral-100'>
+    <div className='flex flex-col gap-10 col-span-4 md:col-span-8 lg:col-span-8 lg:col-start-4 px-4 md:px-8 max-w-[990px]'>
+      <h1 className='text-preset-1-mobile md:text-preset-1 font-bold text-neutral-900 text-center dark:text-neutral-100 md:px-8 lg:px-44'>
         Analyze your text in real-time.
       </h1>
       <div className='dark:text-neutral-200'>
         <textarea
           tabIndex={1}
           onChange={(e) => textChangeHandler(e.target.value)}
-          className='text-preset-3 mb-4 outline-none bg-neutral-100 dark:bg-neutral-700 border-2 border-neutral-200 dark:border-neutral-800 rounded-12 w-full h-[200px] resize-none p-4'
+          className='text-preset-3 mb-4 outline-none bg-neutral-100 dark:bg-neutral-800 border-2 border-neutral-200 dark:border-neutral-700 rounded-12 w-full h-[200px] resize-none p-4'
         />
         <div className='md:flex justify-between items-center'>
           <div className='md:flex gap-6'>

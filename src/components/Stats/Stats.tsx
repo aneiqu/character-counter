@@ -10,7 +10,7 @@ type PropTypes = {
 
 export default function Stats({ text, exSpaces }: PropTypes) {
   return (
-    <div className='flex flex-col md:flex-row gap-4 col-span-4 md:col-span-8 px-4 md:px-8'>
+    <div className='flex flex-col md:flex-row gap-4 col-span-4 md:col-span-8 lg:col-span-8 lg:col-start-4 px-4 md:px-8 max-w-[990px]'>
       <StatisticCard
         StatValue={exSpaces ? text.replace(/\s+/g, "").length : text.length}
         StatTitle='Total Characters'

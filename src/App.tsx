@@ -33,7 +33,7 @@ function App() {
   return (
     <div
       role='main'
-      className={`${theme} grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 mx-auto duration-200 gap-10`}
+      className={`${theme} grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 duration-200 gap-10`}
       style={{ backgroundImage: `url(${theme === "dark" ? BgDark : BgLight})` }}
     >
       <Header toggleTheme={toggleTheme} />

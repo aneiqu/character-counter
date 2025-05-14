@@ -39,7 +39,7 @@ export default function DensityContainer({ text }: PropTypes) {
     ));
 
   return (
-    <div className='flex flex-col gap-5 col-span-4 md:col-span-8 px-4 md:px-8 dark:text-neutral-200'>
+    <div className='flex flex-col gap-5 col-span-4 md:col-span-8 lg:col-span-8 lg:col-start-4 px-4 md:px-8 dark:text-neutral-200 max-w-[990px]'>
       <h3 className='text-preset-2'>Letter Density</h3>
       <div className='flex flex-col gap-3'>
         {LetterStats.slice(0, showAllStats ? LetterStats.length : 5)}
